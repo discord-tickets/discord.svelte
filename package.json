@@ -1,0 +1,85 @@
+{
+	"browserslist": [
+		"defaults"
+	],
+	"description": "TODO",
+	"devDependencies": {
+		"@babel/core": "7.14.0",
+		"@babel/eslint-parser": "7.13.14",
+		"@babel/preset-env": "7.14.0",
+		"@rollup/plugin-commonjs": "18.0.0",
+		"@rollup/plugin-node-resolve": "11.2.1",
+		"@storybook/addon-actions": "6.2.9",
+		"@storybook/addon-essentials": "6.2.9",
+		"@storybook/addon-links": "6.2.9",
+		"@storybook/svelte": "6.2.9",
+		"@testing-library/cypress": "7.0.6",
+		"autoprefixer": "10.2.5",
+		"babel-loader": "8.2.2",
+		"cypress": "7.2.0",
+		"eslint": "7.25.0",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-cypress": "2.11.2",
+		"eslint-plugin-svelte3": "3.2.0",
+		"glob": "7.1.6",
+		"husky": "6.0.0",
+		"lint-staged": "10.5.4",
+		"postcss": "8.2.13",
+		"prettier": "2.2.1",
+		"prettier-plugin-svelte": "2.2.0",
+		"react-is": "17.0.2",
+		"rollup": "2.46.0",
+		"rollup-plugin-css-only": "3.1.0",
+		"rollup-plugin-livereload": "2.0.0",
+		"rollup-plugin-svelte": "7.1.0",
+		"sirv-cli": "1.0.11",
+		"start-server-and-test": "1.12.1",
+		"svelte": "3.38.2",
+		"svelte-loader": "3.1.1",
+		"svelte-preprocess": "4.7.3"
+	},
+	"files": [
+		"dist"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"keywords": [
+		"svelte",
+		"component",
+		"library"
+	],
+	"license": "TODO",
+	"lint-staged": {
+		"*.{svelte, html, css, scss, stylus, js, ts, json, yml, md}": [
+			"prettier --write",
+			"git add"
+		],
+		"*.{js, svelte}": [
+			"eslint --fix",
+			"git add"
+		]
+	},
+	"name": "TODO",
+	"prettier": {
+		"singleQuote": true,
+		"tabWidth": 4,
+		"useTabs": true
+	},
+	"repository": "TODO",
+	"scripts": {
+		"cy:open": "cypress open",
+		"cy:run": "cypress run",
+		"dev": "rollup -c -w",
+		"lint": "eslint --color --ignore-path .gitignore .",
+		"prepare": "node preprocess",
+		"prepublishOnly": "npm run prepare",
+		"start": "sirv public",
+		"test": "start-server-and-test dev http://localhost:5000 cy:run",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"svelte": "dist/index.js"
+}
